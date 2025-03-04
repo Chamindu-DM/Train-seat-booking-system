@@ -23,16 +23,18 @@ class TrainSystem
             Console.WriteLine("=== Sri Lanka Railways Booking System ===");
             Console.WriteLine("1. View Train Schedules");
             Console.WriteLine("2. Book a Seat");
-            Console.WriteLine("3. View Booked Seats (Sorted)");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("3. Cancel Booking");
+            Console.WriteLine("4. View Booked Seats (Sorted)");
+            Console.WriteLine("5. Exit");
             Console.Write("Select option: ");
 
             switch (Console.ReadLine())
             {
                 case "1": _viewSchedule.DisplaySchedules(); break;
                 case "2": _bookSeat.Book(); break;
-                case "3": _viewBookedSeats.DisplayBookedSeats(); break;
-                case "4": return;
+                case "3": _bookSeat.CancelBooking(); break;
+                case "4": _viewBookedSeats.DisplayBookedSeats(); break;
+                case "5": return;
                 default: Console.WriteLine("Invalid option"); break;
             }
 

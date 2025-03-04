@@ -71,6 +71,9 @@ class BookSeat
         
         int maxSeats = selectedSchedule.GetTotalSeats(seatClass);
 
+        decimal seatPrice = selectedSchedule.GetAdjustedPrice(seatClass, routeName);
+        Console.WriteLine($"\n{seatClass} price per seat: Rs. {seatPrice:F2}");
+
         Console.Write($"\nHow many seats would you like to book? (1-{maxSeats}): ");
         if (!int.TryParse(Console.ReadLine(), out int seatCount) ||
             seatCount < 1 || seatCount > maxSeats)
@@ -120,6 +123,131 @@ class BookSeat
         }
 
         Console.WriteLine($"\nBooking successful! You have booked {seatClass} seats: {string.Join(", ", seatsToBook.Select(x => x + 1))}");
+
+        decimal totalPrice = seatPrice * seatsToBook.Count;
+        Console.WriteLine($"Total price: Rs. {totalPrice:F2}");
+    }
+
+    public void CancelBooking()
+    {
+        Console.WriteLine("\nAvailable Routes:");
+        var routesList = _routes.RouteSchedules.Keys.ToList();
+        for (int i = 0; i < routesList.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {routesList[i]}");
+        }
+
+        Console.Write("\nSelect route number: ");
+        if (!int.TryParse(Console.ReadLine(), out int routeIndex) ||
+            routeIndex < 1 || routeIndex > routesList.Count)
+        {
+            Console.WriteLine("Invalid route number!");
+            return;
+        }
+
+        string routeName = routesList[routeIndex - 1];
+        var schedules = _routes.RouteSchedules[routeName];
+
+        Console.WriteLine("\nAvailable Schedules:");
+        for (int i = 0; i < schedules.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {schedules[i].Name} at {schedules[i].Time}");
+        }
+
+        Console.Write("\nSelect schedule number: ");
+        if (!int.TryParse(Console.ReadLine(), out int scheduleIndex) ||
+            scheduleIndex < 1 || scheduleIndex > schedules.Count)
+        {
+            Console.WriteLine("Invalid schedule!");
+            return;
+        }
+
+        var selectedSchedule = schedules[scheduleIndex - 1];
+        
+        // Select class
+        Console.WriteLine("\nSelect Class for Cancellation:");
+        Console.WriteLine("1. First Class");
+        Console.WriteLine("2. Second Class");
+        Console.WriteLine("3. Third Class");
+        Console.Write("\nSelect class: ");
+        
+        if (!int.TryParse(Console.ReadLine(), out int classChoice) ||
+            classChoice < 1 || classChoice > 3)
+        {
+            Console.WriteLine("Invalid class selection!");
+            return;
+        }
+        
+        string seatClass = classChoice switch
+        {
+            1 => "First Class",
+            2 => "Second Class",
+            3 => "Third Class",
+            _ => "First Class" // Default case
+        };
+        
+        // Show currently booked seats
+        var bookedSeats = selectedSchedule.GetBookedSeats(seatClass);
+        if (bookedSeats.Count == 0)
+        {
+            Console.WriteLine($"No booked seats found in {seatClass} for this schedule.");
+            return;
+        }
+        
+        Console.WriteLine($"\nCurrently Booked Seats in {seatClass}:");
+        DisplaySeatMap(selectedSchedule, seatClass);
+        Console.WriteLine($"Booked seat numbers: {string.Join(", ", bookedSeats.Select(x => x + 1))}");
+        
+        // Ask which seats to cancel
+        Console.Write("\nHow many seats would you like to cancel? ");
+        if (!int.TryParse(Console.ReadLine(), out int cancelCount) ||
+            cancelCount < 1 || cancelCount > bookedSeats.Count)
+        {
+            Console.WriteLine("Invalid number!");
+            return;
+        }
+        
+        List<int> seatsToCancel = new List<int>();
+        for (int i = 0; i < cancelCount; i++)
+        {
+            Console.Write($"\nEnter seat number {i + 1} of {cancelCount} to cancel: ");
+            if (!int.TryParse(Console.ReadLine(), out int seatNumber) ||
+                seatNumber < 1 || seatNumber > selectedSchedule.GetTotalSeats(seatClass))
+            {
+                Console.WriteLine("Invalid seat number!");
+                return;
+            }
+
+            if (!selectedSchedule.IsSeatBooked(seatClass, seatNumber - 1))
+            {
+                Console.WriteLine($"Seat {seatNumber} is not booked!");
+                return;
+            }
+
+            if (seatsToCancel.Contains(seatNumber - 1))
+            {
+                Console.WriteLine($"Seat {seatNumber} is already in your cancellation list!");
+                return;
+            }
+
+            seatsToCancel.Add(seatNumber - 1);
+        }
+        
+        // Calculate refund amount (70% of original price)
+        decimal refundAmount = 0;
+        foreach (int seat in seatsToCancel)
+        {
+            refundAmount += selectedSchedule.GetSeatPrice(seatClass) * 0.7m;
+        }
+
+        // Cancel the selected seats
+        foreach (int seatNumber in seatsToCancel)
+        {
+            selectedSchedule.ToggleSeat(seatClass, seatNumber);
+        }
+
+        Console.WriteLine($"\nCancellation successful! You have cancelled {seatClass} seats: {string.Join(", ", seatsToCancel.Select(x => x + 1))}");
+        Console.WriteLine($"Refund amount: Rs. {refundAmount:F2} (70% of original price)");
     }
 
     private void DisplaySeatMap(TrainSchedule schedule, string seatClass)
