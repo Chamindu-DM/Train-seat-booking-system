@@ -8,24 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Tharuka Dissanayake\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
+      "projectUniqueName": "C:\\Users\\Tharuka Dissanayake\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
       "projectName": "TrainSystem_1",
-      "projectPath": "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\obj\\",
+      "projectPath": "C:\\Users\\Tharuka Dissanayake\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
+      "packagesPath": "C:\\Users\\Tharuka Dissanayake\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tharuka Dissanayake\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Tharuka Dissanayake\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -49,7 +44,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -67,12 +62,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

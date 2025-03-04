@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "DC/lthPS+Oo=",
+  "dgSpecHash": "DkVq5Cvnjk4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Tharuka Dissanayake\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tharuka Dissanayake\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\Tharuka Dissanayake\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\Tharuka Dissanayake\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\Tharuka Dissanayake\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.11\\microsoft.netcore.app.host.win-x64.8.0.11.nupkg.sha512"
+  ],
   "logs": []
 }
