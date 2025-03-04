@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chami\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj": {}
+    "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chami\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj": {
+    "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chami\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
         "projectName": "TrainSystem_1",
-        "projectPath": "C:\\Users\\chami\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
-        "packagesPath": "C:\\Users\\chami\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chami\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\obj\\",
+        "projectPath": "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\TrainSystem_1.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\OneDrive - engug.ruh.ac.lk\\Documents\\GitHub\\Train-seat-booking-system\\TrainSystem_1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\chami\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
